@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Drill Six</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+     <div id="app">
+        <!-- Your HTML template here -->
+        <p>How Old Are You</p>
+       <input type="number" v-model.number="age" placeholder="Your age" />
+
+<p v-if="age === null || age === ''">Enter your age</p>
+<p v-else-if="age < 18">You're a minor</p>
+<p v-else-if="age < 65">You're an adult</p>
+<p v-else>You're a senior</p>
+    </div>
+    
+</body>
+
+<script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+        setup() {
+            
+            // Your logic here
+        const age = ref(null); 
+
+            return {
+                age,
+            };
+        }
+    }).mount('#app');
+    </script>
+</html>
